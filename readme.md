@@ -6,7 +6,7 @@
 <br/>
 <br/>
 
-<h3 align='center'>@tunebond/form-code</h3>
+<h3 align='center'>@tunebond/tone-code</h3>
 <p align='center'>
   Generate obscure IDs using <a href="https://github.com/tunebond/tone">Tone's</a> alphabet
 </p>
@@ -20,15 +20,15 @@ secure, it's not supposed to be secure, just here to make it appear
 non-sequential to the average person :).
 
 ```
-pnpm add @tunebond/form-code
-yarn add @tunebond/form-code
-npm i @tunebond/form-code
+pnpm add @tunebond/tone-code
+yarn add @tunebond/tone-code
+npm i @tunebond/tone-code
 ```
 
 ## Example
 
 ```ts
-import { make4, make32 } from '@tunebond/form-code'
+import { make4, make32 } from '@tunebond/tone-code'
 
 console.log(make4(256n)) // => MHZL
 console.log(make32(256n)) // => ZFHDWMVBWWZXKZKTFSTVFHXNWWDVVKCM
