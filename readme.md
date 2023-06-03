@@ -11,5 +11,5 @@ npm i @tunebond/form-code
 ```ts
 import { make4 } from '@tunebond/form-code'
 
-console.log(make4(256n))
+console.log(make4(256n)) // => MHZL
 ```
