@@ -13,7 +13,8 @@ npm i @tunebond/form-code
 ## Example
 
 ```ts
-import { make4 } from '@tunebond/form-code'
+import { make4, make32 } from '@tunebond/form-code'
 
 console.log(make4(256n)) // => MHZL
+console.log(make32(256n)) // => ZFHDWMVBWWZXKZKTFSTVFHXNWWDVVKCM
 ```

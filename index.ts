@@ -9,11 +9,36 @@ import move from '@lancejpollard/configured-quadratic-residue-prng.js'
 export const ALPHABET = 'MNDBTKHSFVZXCWLR'
 
 /**
- * Seeds for PRNG.
+ * Seed for 4 hex character PRNG.
  */
 
 export const J8 = 51137n
+
+/**
+ * Seed for 6 hex character PRNG.
+ */
+
 export const J12 = 14151617n
+
+/**
+ * Seed for 8 hex character PRNG.
+ */
+
+export const J16 = 1111211111n
+
+/**
+ * Seed for 32 hex character PRNG.
+ */
+
+export const J64 = 23242526272829303132333435363738394041n
+
+export function move64(i: bigint): bigint {
+  return move(i, J64, 64) as bigint
+}
+
+export function move16(i: bigint): bigint {
+  return move(i, J16, 16) as bigint
+}
 
 export function move12(i: bigint): bigint {
   return move(i, J12, 12) as bigint
@@ -38,6 +63,28 @@ export function makeSizeList(
     i--
   }
   return arr
+}
+
+/**
+ * Generate 32 "hex" character code.
+ *
+ * @param n
+ * @returns bigint
+ */
+
+export function make32(n: bigint) {
+  return makeCode(64, move64(n))
+}
+
+/**
+ * Generate 8 "hex" character code.
+ *
+ * @param n
+ * @returns bigint
+ */
+
+export function make8(n: bigint) {
+  return makeCode(16, move16(n))
 }
 
 /**
