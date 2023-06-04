@@ -2,11 +2,21 @@
 import move from '@lancejpollard/configured-quadratic-residue-prng.js'
 
 /**
- * Special alphabet of flat characters according to
+ * Special CODE of flat characters according to
  * https://github.com/tunebond/tone ordering.
  */
 
-export const ALPHABET = 'MNDBTKHSFVZXCWLR'
+export const CODE = 'MNDBTKHSFVZXCWLR'
+
+export const CODE_HOST = CODE.split('').reduce((m, x, i) => {
+  m[x] = i.toString(16)
+  return m
+}, {} as Record<string, string>)
+
+export const HOST_CODE = CODE.split('').reduce((m, x, i) => {
+  m[i.toString(16)] = x
+  return m
+}, {} as Record<string, string>)
 
 /**
  * Seed for 4 hex character PRNG.
@@ -118,6 +128,38 @@ export function make4(n: bigint) {
 
 export default function makeCode(size: number, n: bigint) {
   return makeSizeList(size, n)
-    .map(i => ALPHABET[i])
+    .map(i => CODE[i])
+    .join('')
+}
+
+export function formHostCode(code: string): string {
+  return code.split('-').map(formCode).join('')
+}
+
+export function formCodeHost(code: string): string {
+  return (
+    formHost(code.slice(0, 8)) +
+    '-' +
+    formHost(code.slice(8, 12)) +
+    '-' +
+    formHost(code.slice(12, 16)) +
+    '-' +
+    formHost(code.slice(16, 20)) +
+    '-' +
+    formHost(code.slice(20, 32))
+  )
+}
+
+export function formCode(code: string) {
+  return code
+    .split('')
+    .map(x => HOST_CODE[x])
+    .join('')
+}
+
+export function formHost(code: string) {
+  return code
+    .split('')
+    .map(x => CODE_HOST[x])
     .join('')
 }

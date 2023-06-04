@@ -18,6 +18,9 @@
     "noImplicitAny": true,
     "declaration": true
   },
+  "ts-node": {
+    "files": true
+  },
   "include": ["*.ts", "**/*.ts", "*.d.ts"],
   "exclude": ["node_modules", "host"]
 }
