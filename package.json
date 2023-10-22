@@ -1,7 +1,7 @@
 {
-  "name": "@tunebond/tone-code",
+  "name": "@wavebond/tone-code",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "license": "MIT",
   "main": "./host/index.js",
   "files": [
@@ -41,6 +41,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@lancejpollard/configured-quadratic-residue-prng.js": "^1.0.0"
+    "@lancejpollard/configured-quadratic-residue-prng.js": "^1.0.0",
+    "uuidv4": "^6.2.13"
   }
 }
