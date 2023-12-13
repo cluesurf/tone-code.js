@@ -4,7 +4,7 @@ import { isUuid } from 'uuidv4'
 
 /**
  * Special CODE of flat characters according to
- * https://github.com/nerdbond/tone ordering.
+ * https://github.com/termsurf/tone ordering.
  */
 
 export const CODE = 'mndbtkhsfvzxcwlr'
