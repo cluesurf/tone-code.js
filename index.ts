@@ -7,7 +7,7 @@ import { isUuid } from 'uuidv4'
  * https://github.com/termsurf/tone ordering.
  */
 
-export const CODE = 'mndbtkhsfvzxcwlr'
+export const CODE = 'MNDBTKHSFVZXCWLR'
 
 export const CODE_TEST = new RegExp(`^[${CODE}]{32}$`)
 
